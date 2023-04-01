@@ -30,19 +30,17 @@
 		margin-right: 0;
 		}
 
-		button[type="button"] {
-		margin-top: 20px;
-		padding: 10px;
-		background-color: #4CAF50;
-		color: white;
-		border: none;
-		border-radius: 5px;
-		cursor: pointer;
-		font-size: 16px;
+		button {
+			background-color: rgb(0, 145, 255);
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
 		}
 
 		button[type="button"]:hover {
-		background-color: #3e8e41;
+		background-color: rgb(100, 182, 245);
 		}
 
 		#result {
@@ -50,6 +48,13 @@
 		font-size: 20px;
 		font-weight: bold;
 		}
+
+		@media screen and (min-width: 768px) {
+			.container {
+				max-width: 960px;
+			}
+		}
+
 
 	</style>
 	<script type="text/javascript">
@@ -147,6 +152,7 @@
 		<br>
 		<input type="button" value="Calculate QuickDASH Score" onclick="calculateQuickDASH()">
 		<br><br>
+		<button type="button" class="btn btn-primary" onclick="calculateQuickDASH()">Submit</button>
 		<div id="result"></div>
 	</form>
 </body>
