@@ -76,13 +76,32 @@
 		font-size: 20px;
 		font-weight: bold;
 		}
-
+		/*
 		@media only screen and (max-width: 10px) {
-		/* CSS code for screens smaller than 600px (i.e. mobile devices) */
+		/* CSS code for screens smaller than 600px (i.e. mobile devices)
 			body {
 				width: 100%;
 				margin: 0;
 			}
+		}*/
+
+		/* Default styles for all screen sizes */
+
+		/* Media query for screens 600px wide or larger */
+		@media screen and (min-width: 600px) {
+		body {
+			font-size: 18px;
+			max-width: 960px;
+			margin: 0 auto;
+		}
+		}
+
+		/* Media query for screens 1200px wide or larger */
+		@media screen and (min-width: 1200px) {
+		body {
+			font-size: 20px;
+			max-width: 1200px;
+		}
 		}
 
 
