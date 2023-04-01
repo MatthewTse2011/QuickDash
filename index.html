@@ -102,8 +102,12 @@
 				transform: scale(3);
 				margin-left: 80px;
 				margin-bottom: 80px;
-				
+			}
 
+			#result {
+				margin-top: 40px;
+				font-size: 40px;
+				font-weight: bold;
 			}
 		}
 
@@ -150,6 +154,7 @@
 			}
 			var quickDASHscore = ((totalScore / totalQuestions) - 1) * 25;
 			document.getElementById("result").innerHTML = "Your QuickDASH score is: " + Math.round(quickDASHscore) + "/100";
+				
 		}
 	</script>
 </head>
