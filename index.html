@@ -3,42 +3,53 @@
 <head>
 	<title>QuickDASH Score Calculator</title>
 	<style>
-		.WebContainer{
-			width: 100%;
-			height: auto;
-		}
-
-		h1, h2, h3 {
-		color: #333;
-		}
-
-		button {
-		background-color: #007bff;
-		color: #fff;
-		border: none;
-		border-radius: 4px;
-		padding: 10px 20px;
-		}
-
-		.form-group {
+		h1 {
+		text-align: center;
+		margin-top: 20px;
 		margin-bottom: 20px;
 		}
 
-		label {
-		display: block;
+		form {
+		margin: auto;
+		max-width: 600px;
+		padding: 20px;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		}
+
+		p {
+		margin-top: 10px;
 		margin-bottom: 10px;
+		}
+
+		input[type="radio"] {
+		margin-right: 10px;
+		}
+
+		input[type="radio"]:last-child {
+		margin-right: 0;
+		}
+
+		button[type="button"] {
+		margin-top: 20px;
+		padding: 10px;
+		background-color: #4CAF50;
+		color: white;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+		font-size: 16px;
+		}
+
+		button[type="button"]:hover {
+		background-color: #3e8e41;
+		}
+
+		#result {
+		margin-top: 20px;
+		font-size: 20px;
 		font-weight: bold;
 		}
-
-		input[type="text"], select {
-		display: block;
-		width: 100%;
-		padding: 10px;
-		border-radius: 4px;
-		border: 1px solid #ccc;
-		margin-bottom: 10px;
-		}
-
 
 	</style>
 	<script type="text/javascript">
@@ -64,7 +75,7 @@
 		<p></p>如果你在過去的一星期沒有進行該項活動，請你估計該項活動對你的影響並挑選出一個最準確的選擇。
 		<p></p>無論你是使用左手或右手去進行該項活動，請根據你的能力作出評估，而無需理會所用的方法。
 			<p>1. 開啟緊或新樽蓋:</p>
-			<input type="radio" name="section1" value="1" class="score"> 沒困難1
+			<input type="radio" name="section1" value="1" class="score"> 沒困難
 			<input type="radio" name="section1" value="2" class="score"> 輕微困難
 			<input type="radio" name="section1" value="3" class="score"> 中度困難
 			<input type="radio" name="section1" value="4" class="score"> 很大困難
