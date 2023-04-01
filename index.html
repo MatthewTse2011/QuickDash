@@ -33,7 +33,7 @@
 		button {
 			background-color: rgb(0, 145, 255);
 			color: white;
-			padding: 10px 20px;
+			padding: 9px 15px;
 			border: none;
 			border-radius: 4px;
 			cursor: pointer;
@@ -74,7 +74,7 @@
 	</script>
 </head>
 <body>
-	<h1>QuickDASH Score Calculator</h1>
+	<h1>上肢功能評定（中文簡短版）</h1>
 	<form>
 		請將你上星期進行以下活動的能力給予評分，根據困難程度選擇適當的選擇。
 		<p></p>如果你在過去的一星期沒有進行該項活動，請你估計該項活動對你的影響並挑選出一個最準確的選擇。
@@ -150,9 +150,10 @@
 			<input type="radio" name="section11" value="5" class="score"> 極大影響至不能入睡
 			<br>
 		<br>
-		<input type="button" value="Calculate QuickDASH Score" onclick="calculateQuickDASH()">
-		<br><br>
-		<button type="button" class="btn btn-primary" onclick="calculateQuickDASH()">Submit</button>
+		<!-- <input type="button" value="Calculate QuickDASH Score" onclick="calculateQuickDASH()">
+		-->
+
+		<button type="button" class="btn btn-primary" onclick="calculateQuickDASH()">提交</button>
 		<div id="result"></div>
 	</form>
 </body>
