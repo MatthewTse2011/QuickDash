@@ -207,7 +207,7 @@
 	</script>
 </head>
 <body>
-	<h1>上肢功能評定（中文簡短版） 1</h1>
+	<h1>上肢功能評定（中文簡短版） </h1>
     <button class = "increase-font-size-btn" id="increase-font-button">大
     </button>
 
@@ -246,22 +246,34 @@
     </button>
 
     <script>
-        // get the button element by its ID
-        var button = document.getElementById("decrease-font-button");
+       // get the button element by its ID
+		var button = document.getElementById("decrease-font-button");
 
-        // add an event listener to the button that increases the font size of all elements
-        button.addEventListener("click", function() {
-        // get all elements on the page
-        var elements = document.getElementsByTagName("*");
-        
-        // loop through each element and increase its font size
-        for (var i = 0; i < elements.length; i++) {
-            var element = elements[i];
-            var fontSize = window.getComputedStyle(element).getPropertyValue("font-size");
-            var newFontSize = parseFloat(fontSize) * 0.9;
-            element.style.fontSize = newFontSize + "px";
-        }
-        });
+		// add an event listener to the button that decreases the font size of all elements
+		button.addEventListener("click", function() {
+			// get all elements on the page
+			var elements = document.getElementsByTagName("*");
+
+			// loop through each element and decrease its font size
+			for (var i = 0; i < elements.length; i++) {
+				var element = elements[i];
+				var tagName = element.tagName.toLowerCase();
+				var fontSize = window.getComputedStyle(element).getPropertyValue("font-size");
+				var newFontSize = parseFloat(fontSize) * 0.9;
+
+				// decrease font size of text inputs, radio buttons, and labels
+				if ((tagName == "input" && element.type == "text") || (element.type == "radio")) {
+					element.style.fontSize = newFontSize + "px";
+					element.style.width = newFontSize + "px"; // added line to make radio buttons smaller
+					element.style.height = newFontSize + "px"; // added line to make radio buttons smaller
+				} else if (tagName == "label") {
+					element.style.fontSize = newFontSize + "px";
+				} else {
+					element.style.fontSize = newFontSize + "px";
+				}
+			}
+		});
+
     </script>
 
 	<h2> 威爾斯親王醫院 物理治療部</h2>
