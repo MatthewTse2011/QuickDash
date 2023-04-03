@@ -236,8 +236,8 @@
 			// increase font size of text inputs, radio buttons, and labels
 			if ((tagName == "input" && element.type == "text") || (element.type == "radio")) {
 			element.style.fontSize = newFontSize + "px";
-			element.style.width = newFontSize - 20 + "px"; // added line to make radio buttons bigger
-			element.style.height = newFontSize - 20 + "px"; // added line to make radio buttons bigger
+			element.style.width = newFontSize - 15 + "px"; // added line to make radio buttons bigger
+			element.style.height = newFontSize - 15 + "px"; // added line to make radio buttons bigger
 			} else if (tagName == "label") {
 			element.style.fontSize = newFontSize + "px";
 			} else {
@@ -270,8 +270,8 @@
 				// decrease font size of text inputs, radio buttons, and labels
 				if ((tagName == "input" && element.type == "text") || (element.type == "radio")) {
 					element.style.fontSize = newFontSize + "px";
-					element.style.width = newFontSize - 20 + "px"; // added line to make radio buttons smaller
-					element.style.height = newFontSize - 20 + "px"; // added line to make radio buttons smaller
+					element.style.width = newFontSize - 15 + "px"; // added line to make radio buttons smaller
+					element.style.height = newFontSize - 15 + "px"; // added line to make radio buttons smaller
 				} else if (tagName == "label") {
 					element.style.fontSize = newFontSize + "px";
 				} else {
