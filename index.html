@@ -174,10 +174,33 @@
 			document.getElementById("result").innerHTML = "請勿關閉此頁面，並將以下資料展示給物理治療師。<br><br> Your QuickDASH score is: " + Math.round(quickDASHscore) + "/100";
 				
 		}
+
+
 	</script>
 </head>
 <body>
-	<h1>上肢功能評定（中文簡短版） </h1>
+	<h1>上肢功能評定（中文簡短版） 1</h1>
+    <button id="increase-font-button">Increase Font Size</button>
+
+    <script>
+
+        // get the button element by its ID
+        var button = document.getElementById("increase-font-button");
+
+        // add an event listener to the button that increases the font size of all elements
+        button.addEventListener("click", function() {
+        // get all elements on the page
+        var elements = document.getElementsByTagName("*");
+        
+        // loop through each element and increase its font size
+        for (var i = 0; i < elements.length; i++) {
+            var element = elements[i];
+            var fontSize = window.getComputedStyle(element).getPropertyValue("font-size");
+            var newFontSize = parseFloat(fontSize) * 1.1;
+            element.style.fontSize = newFontSize + "px";
+        }
+        });
+    </script>
 	<h2> 威爾斯親王醫院 物理治療部</h2>
 	<form>
 		請將你上星期進行以下活動的能力給予評分，根據困難程度選擇適當的選項。
