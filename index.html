@@ -199,7 +199,7 @@
 	</script>
 </head>
 <body>
-	<h1>上肢功能評定（中文簡短版） </h1>
+	<h1>上肢功能評定（中文簡短版） 1</h1>
     <button class = "increase-font-size-btn" id="increase-font-button">大
     </button>
 
@@ -218,9 +218,13 @@
 			var tagName = element.tagName.toLowerCase();
 			var fontSize = window.getComputedStyle(element).getPropertyValue("font-size");
 			var newFontSize = parseFloat(fontSize) * 1.1;
-			
+
 			// increase font size of text inputs, radio buttons, and labels
-			if (tagName == "input" && element.type == "text" || element.type == "radio" || tagName == "label") {
+			if ((tagName == "input" && element.type == "text") || (element.type == "radio")) {
+			element.style.fontSize = newFontSize + "px";
+			element.style.width = newFontSize + "px"; // added line to make radio buttons bigger
+			element.style.height = newFontSize + "px"; // added line to make radio buttons bigger
+			} else if (tagName == "label") {
 			element.style.fontSize = newFontSize + "px";
 			} else {
 			element.style.fontSize = newFontSize + "px";
