@@ -199,7 +199,7 @@
 	</script>
 </head>
 <body>
-	<h1>上肢功能評定（中文簡短版） </h1>
+	<h1>上肢功能評定（中文簡短版） 1</h1>
     <button class = "increase-font-size-btn" id="increase-font-button">大
     </button>
 
@@ -209,28 +209,26 @@
 
 		// add an event listener to the button that increases the font size of all elements
 		button.addEventListener("click", function() {
-		// get all elements outside the form
-		var elements = document.querySelectorAll("body > *:not(form)");
-
-		// get all elements inside the form
-		var formElements = document.querySelectorAll("form *");
-
+		// get all elements on the page
+		var elements = document.getElementsByTagName("*");
+		
 		// loop through each element and increase its font size
 		for (var i = 0; i < elements.length; i++) {
 			var element = elements[i];
+			if (element.tagName === "INPUT" || element.tagName === "SELECT" || element.tagName === "OPTION") {
+			// increase the font size of the text within the input/select/option elements
 			var fontSize = window.getComputedStyle(element).getPropertyValue("font-size");
 			var newFontSize = parseFloat(fontSize) * 1.1;
 			element.style.fontSize = newFontSize + "px";
-		}
-
-		// loop through each form element and increase its font size
-		for (var i = 0; i < formElements.length; i++) {
-			var formElement = formElements[i];
-			var fontSize = window.getComputedStyle(formElement).getPropertyValue("font-size");
+			} else {
+			// increase the font size of other elements
+			var fontSize = window.getComputedStyle(element).getPropertyValue("font-size");
 			var newFontSize = parseFloat(fontSize) * 1.1;
-			formElement.style.fontSize = newFontSize + "px";
+			element.style.fontSize = newFontSize + "px";
+			}
 		}
 		});
+
 
     </script>
 	<button class = "decrease-font-size-btn" id="decrease-font-button">小
@@ -264,7 +262,7 @@
 		<p>無論你是使用左手或右手去進行該項活動，請根據你的能力作出評估，而無需理會所用的方法。</p>
 			<br><br>
 			<p>1. 開啟緊或新樽蓋:</p>
-			<p><input type="radio" name="section1" value="1" class="score"> 沒困難</p>
+			<input type="radio" name="section1" value="1" class="score"> 沒困難
 			<input type="radio" name="section1" value="2" class="score"> 輕微困難
 			<input type="radio" name="section1" value="3" class="score"> 中度困難
 			<input type="radio" name="section1" value="4" class="score"> 很大困難
