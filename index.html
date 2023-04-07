@@ -124,18 +124,18 @@
 		}
 
 		#popup {
-			position: fixed;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			width: 300px;
-			padding: 20px;
-			background-color: #fff;
-			border: 1px solid #ccc;
-			box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-			z-index: 9999;
-			font-size: 16px;
-			text-align: center;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: white;
+		border: 1px solid black;
+		padding: 20px;
+		display: none;
+		}
+
+		#popup button {
+		margin-top: 10px;
 		}
 
 
@@ -211,21 +211,39 @@
 
 	</style>
 	<script type="text/javascript">
-		function showPopup() {
-			var popup = document.getElementById("popup");
-			popup.style.display = "block";
-			var okButton = document.getElementById("okButton");
-			okButton.onclick = function() {
-				popup.style.display = "none";
-			};
-		}
+	function showPopup(message) {
+		var popup = document.createElement("div");
+		popup.setAttribute("class", "popup");
 
+		var content = document.createElement("div");
+		content.setAttribute("class", "popup-content");
+
+		var closeBtn = document.createElement("button");
+		closeBtn.setAttribute("class", "close-btn");
+		closeBtn.innerHTML = "OK";
+		closeBtn.addEventListener("click", function() {
+			hidePopup(popup);
+		});
+
+		var messageNode = document.createTextNode(message);
+
+		content.appendChild(messageNode);
+		content.appendChild(closeBtn);
+		popup.appendChild(content);
+
+		document.body.appendChild(popup);
+
+		return popup;
+	}
 
 		function hidePopup(popup) {
-			popup.parentNode.removeChild(popup);
-		}
+		document.body.removeChild(popup);
+	}
 
-		function calculateQuickDASH() {
+
+		function calculateQuickDASH(event) {
+			event.preventDefault(); // Prevent form submission
+			
 			var values = document.getElementsByClassName("score");
 			var totalScore = 0;
 			var totalQuestions = 0;
@@ -243,17 +261,22 @@
 				document.getElementById("result").innerHTML = "你尚有" + (11 - totalQuestions)+ "條問題未回答";
 			}
 			
-			var popup = document.createElement("div");
-			popup.className = "popup";
-			popup.innerHTML = "請勿關閉此頁面，並將以下資料展示給物理治療師。<br> Your Total Score is: " + quickDASHscore + "<br><br><button onclick='hidePopup(this.parentNode)'>OK</button>";
-			document.body.appendChild(popup);
+			var popup = document.getElementById("popup");
+			var message = "請勿關閉此頁面，並將以下資料展示給物理治療師。<br> Your Total Score is: " + quickDASHscore;
+			popup.innerHTML = message;
+			popup.style.display = "block";
+
+			var okButton = document.getElementById("ok-button");
+			okButton.onclick = function () {
+				popup.style.display = "none";
+			}
 		}
 
 
 	</script>
 </head>
 <body>
-	<h1>上肢功能評定（中文簡短版）  </h1>
+	<h1>上肢功能評定（中文簡短版） 1 </h1>
     <button class = "increase-font-size-btn" id="increase-font-button">大
     </button>
 
@@ -401,8 +424,12 @@
 			<br>
 		<br>
 		<br>
-		<button type="button" class="btn-primary" onclick="calculateQuickDASH()">提交</button>
+		<button type="button" class="btn-primary" onclick="calculateQuickDASH(event)">提交</button>
 		<div id="result"></div>
+		<div id="popup">
+			<!-- Popup message will be inserted here by JavaScript -->
+			<button id="ok-button">OK</button>
+		</div>
 	</form>
 </body>
 </html>
