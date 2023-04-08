@@ -25,29 +25,10 @@
 		}
 		*/
 
-		@charset "utf-8";
+		body {
+  font-family: "微軟正黑體", sans-serif;
+}
 
-@font-face {
-  font-family: MyTitleChinese;
-  /* 1. Hiragino looks better than JhengHei and Mac often have both fonts, thus
-   *    put Hiragino prior to JengHei.
-   * 2. Linux shows JhengHei pretty ugly, thus put Micro Hei prior to JhengHei.
-   * 3. Windows users show WenQuanYi Micro Hei pretty ugly, thus use a different stylesheet.
-   */
-  src: local("LiHei Pro"), local("儷黑Pro") local("微軟正黑體"), local("Microsoft JhengHei");
-  unicode-range: U+4E00-9FFF;
-  font-weight: bold;
-  font-style: normal; }
-
-@font-face {
-  font-family: MyMainChinese;
-  /* 1. Hiragino looks better than JhengHei and Mac often have both fonts, thus
-   *    put Hiragino prior to JengHei.
-   * 2. Linux shows JhengHei pretty ugly, thus put Micro Hei prior to JhengHei.
-   * 3. Windows users show WenQuanYi Micro Hei pretty ugly, thus use a different stylesheet.
-   */
-  src: local("ヒラギノ角ゴ Pro"), local(Hiragino Kaku Gothic Pro), local("微軟正黑體"), local("Microsoft JhengHei");
-  unicode-range: U+4E00-9FFF; }
 
 		html {
         background-color: rgb(208, 219, 233);
@@ -305,7 +286,7 @@
 	</script>
 </head>
 <body>
-	<h1>上肢功能評定（中文簡短版）  1</h1>
+	<h1>上肢功能評定（中文簡短版）  </h1>
     <button class = "increase-font-size-btn" id="increase-font-button">大
     </button>
 
