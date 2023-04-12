@@ -266,7 +266,7 @@
 				}
 			}
 
-			if (totalQuestions == 11){
+			if (totalQuestions >= 10){
 				var quickDASHscore = ((totalScore / totalQuestions) - 1) * 25;
 				document.getElementById("result").innerHTML = "非常感謝您完成了這份調查中所有的問題<br><br>請勿關閉此頁面，並將以下資料展示給物理治療師。<br><br> Your QuickDASH score is: " + Math.round(quickDASHscore) + "/100";
 				var popup = showPopup("非常感謝您完成了這份調查中所有的問題<br><br>請勿關閉此頁面，並將以下資料展示給物理治療師。<br><br> Your Total Score is: " + Math.round(quickDASHscore));
