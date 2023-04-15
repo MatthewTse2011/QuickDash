@@ -90,13 +90,37 @@
 		}
 
 		button[type="button"]:hover {
-		background-color: rgb(100, 182, 245);
+			background-color: rgb(100, 182, 245);
+		}
+
+		input[type="reset"] {
+			background-color: rgb(0, 145, 255);
+			color: white;
+			border: none;
+			border-radius: 25px;
+			cursor: pointer;
+			font-size: 30px;
+			display: block;
+			margin: 0 auto;
+			padding: 20px 33px;
+			margin-right: 0px;
+		}
+
+		input[type="reset"]:hover {
+			background-color: rgb(100, 182, 245);
+		}
+
+		.button-container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-top: 16px;
 		}
 
 		.btn-primary {
 			/* padding: 23px 33px; */
 			padding: 20px 33px;
-			
+			margin-left: 20px;
 		}
 
         .increase-font-size-btn {
@@ -166,6 +190,8 @@
 			padding: 9px 15px;
 			border-radius: 13px;
 		}
+
+		
 
 
 		/*
@@ -284,6 +310,9 @@
 			
 		}
 
+		function resetContent() {
+    		document.getElementById("result").innerHTML = "";
+		}
 
 	</script>
 </head>
@@ -356,6 +385,7 @@
 		});
 
     </script>
+
 
 	<h2> 威爾斯親王醫院 物理治療部</h2>
 	<form>
@@ -438,9 +468,10 @@
 		<br>
 		<div id="result"></div>
 		<br>
-		<button type="button" class="btn-primary" onclick="calculateQuickDASH(event)">提交</button>
-		
-		
+		<div class="button-container">
+			<input type="reset" value="重設" onclick="resetContent()"> 
+			<button type="button" class="btn-primary" onclick="calculateQuickDASH(event)">提交</button>
+		</div>
 	</form>
 	<div id="popup">
 		<div class="popup-content">
