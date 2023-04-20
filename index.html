@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta http-equiv="Content-Language" content="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>QuickDASH Score Calculator</title>
 	<style>
 		@font-face{
@@ -29,10 +31,10 @@
       	}
 
 		h1 {
-		text-align: center;
-		margin-top: 20px;
-		margin-bottom: 20px;
-		font-size: 45px;
+			text-align: center;
+			margin-top: 20px;
+			margin-bottom: 20px;
+			font-size: 45px;
 	
 		}
 
@@ -40,7 +42,7 @@
 			margin-top: 20px;
 			margin-bottom: 20px;
 			text-align: center;
-			font-size: 30px;
+			font-size: 25px;
 		}
 
 		body {
@@ -50,13 +52,14 @@
 
 
 		form {
-		margin: 10px;
-		max-width: auto;
-		padding: 20px;
-		border: 1px solid #ccc;
-		border-radius: 5px;
-		font-size: 30px;
-		background-color: rgb(224, 233, 246);
+			margin: 10px;
+			max-width: auto;
+			padding: 20px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			font-size: 30px;
+			background-color: rgb(224, 233, 246);
+			line-height: 2;
 		}
 
 		input {
@@ -64,14 +67,14 @@
 		}
 
 		p {
-		margin-top: 10px;
-		margin-bottom: 10px;
+			margin-top: 10px;
+			margin-bottom: 10px;
 		}
 
 		input[type="radio"] {
-		margin-right: 10px;
-		margin-left: 15px;
-		transform: scale(1.5);
+			margin-right: 10px;
+			margin-left: 15px;
+			transform: scale(1.5);
 		}
 
 		input[type="radio"]:last-child {
@@ -94,7 +97,7 @@
 		}
 
 		input[type="reset"] {
-			background-color: rgb(98, 143, 179);
+			background-color: rgb(0, 145, 255);
 			color: white;
 			border: none;
 			border-radius: 25px;
@@ -103,7 +106,6 @@
 			display: block;
 			margin: 0 auto;
 			padding: 20px 33px;
-			min-height: 20px;
 			margin-right: 0px;
 		}
 
@@ -190,6 +192,36 @@
 			margin-top: 10px;
 			padding: 9px 15px;
 			border-radius: 13px;
+		}
+	
+		
+		.centered-text {
+		  text-align: center;
+		}
+		.centered-text h1 {
+		  display: inline-block;
+		  position: relative;
+		  font-size: 36px;
+		}
+		.centered-text h1:after {
+		  content: "";
+		  position: absolute;
+		  top: 50%;
+		  margin-top: -1px;
+		  left: 0;
+		  width: (50%-50px);
+		  height: 2px;
+		  background-color: black;
+		}
+		.centered-text h1:before {
+		  content: "";
+		  position: absolute;
+		  top: 50%;
+		  margin-top: -1px;
+		  right: 0;
+		  width: (50%-50px);
+		  height: 2px;
+		  background-color: black;
 		}
 
 		
@@ -473,6 +505,10 @@
 			<input type="reset" value="重設" onclick="resetContent()"> 
 			<button type="button" class="btn-primary" onclick="calculateQuickDASH(event)">提交</button>
 		</div>
+		<br>
+		<div class="centered-text">
+		  <h1>謝謝您完成問卷</h1>
+		</div>
 	</form>
 	<div id="popup">
 		<div class="popup-content">
@@ -480,5 +516,6 @@
 		  <button class="popup-button">確定</button>
 		</div>
 	</div>
-</body>
+	<br><br><br><br><br><br><br><br><br><br>
+</body> 
 </html>
